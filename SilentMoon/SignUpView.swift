@@ -7,6 +7,8 @@ struct SignUpView: View {
     @State private var password = "........"
     @State private var agreedToPolicy = false
     @State private var showPassword = false
+    @State private var proceedToOnboarding = false
+
     var body: some View {
         ZStack {
             Color.white
@@ -74,7 +76,7 @@ struct SignUpView: View {
                 .padding(.horizontal, 20)
                 .padding(.top, 8)
                 Button {
-                    // Handle sign up
+                    proceedToOnboarding = true
                 } label: {
                     Text("GET STARTED")
                         .font(.system(size: 14, weight: .semibold))
@@ -90,5 +92,8 @@ struct SignUpView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+        .navigationDestination(isPresented: $proceedToOnboarding) {
+            OnboardingView(userName: name)
+        }
     }
 }
