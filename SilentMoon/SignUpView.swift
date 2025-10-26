@@ -2,9 +2,9 @@ import SwiftUI
 
 struct SignUpView: View {
     @Environment(\.dismiss) var dismiss
-    @State private var name = "afsar"
-    @State private var email = "imshuvo97@gmail.com"
-    @State private var password = "........"
+    @State private var name = "sena"
+    @State private var email = "nsenasabirli@gmail.com"
+    @State private var password = "helloworld"
     @State private var agreedToPolicy = false
     @State private var showPassword = false
     @State private var proceedToOnboarding = false
